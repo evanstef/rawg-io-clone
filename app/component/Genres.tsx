@@ -11,7 +11,7 @@ const Genres = () => {
 const {genres,handleGetIdGenres} = useGame()
 const linkActive = usePathname()
 
-const newGenres = genres.slice(0,15)
+const newGenres = genres.slice(0,15).sort((a : any,b : any) => b.rating_count - a.rating_count ) 
 
   return (
  <div className='mb-4'> 
