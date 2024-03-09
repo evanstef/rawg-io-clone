@@ -8,26 +8,48 @@
   --background-end-rgb: 255, 255, 255;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+:root {
+  --black: #000;
+}
+
+/* globals.css */
+
+@layer components {
+  .list-decimal-inside > li::before {
+    content: '•';
+    margin-right: 0.5em;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+.gradient-bg {
   background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    to top,
+    rgba(var(--black), 1),
+    rgba(var(--black), 0.9),
+    rgba(var(--black), 0.4),
+    rgba(var(--black), 0)
+  );
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.fadeIn {
+  opacity: 1;
+  transition: opacity 1s;
+}
+
+.fadeOut {
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.img-container {
+  opacity: 1;
+  transition: opacity 1s;
 }
