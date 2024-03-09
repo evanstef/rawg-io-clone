@@ -5,7 +5,7 @@ import DetailCard from '../component/allCard/DetailCard'
 import { useGame } from '../contexts/gameContext'
 import LoadingIconBig from '../component/LoadingIconBig'
 
-const page = () => {
+const Page = () => {
   const {isLoading} = useGame()
 
   return(
@@ -16,4 +16,4 @@ const page = () => {
    
 }
 
-export default page
+export default Page

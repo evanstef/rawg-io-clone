@@ -8,7 +8,7 @@ import LoadingIcon from '@/app/component/LoadingIcon'
 import LoadingIconBig from '@/app/component/LoadingIconBig'
 
 
-const page = () => {
+const Page = () => {
   const {isLoading} = useGame()
 
   return (
@@ -22,4 +22,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

@@ -8,7 +8,7 @@ import LoadingIconBig from '../component/LoadingIconBig'
 
 
 
-const page = () => {
+const Page = () => {
   const{loading} = useGame()
 
 
@@ -23,4 +23,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page
