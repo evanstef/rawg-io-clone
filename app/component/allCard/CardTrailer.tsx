@@ -98,7 +98,7 @@ const CardTrailer = () => {
       ))}
        <Modal isOpen={showModal} className='fixed inset-0' toggle={handleClose}>
         <div className='flex items-center justify-center min-h-screen pt-4 pb-20 text-[0px]'>
-        <div className='fixed inset-0 bg-black opacity-90' aria-hidden='true' onClick={handleClose}></div>
+        <div className='fixed inset-0 bg-black opacity-40 lg:opacity-90' aria-hidden='true' onClick={handleClose}></div>
         <span className='inline-block h-screen align-middle' aria-hidden='true' onClick={handleClose}></span>
         <div className='inline-block align-middle rounded-lg overflow-hidden shadow-xl transform transition-all'>
       <ModalHeader toggle={handleClose}>{currentTrailer && currentTrailer.split('v=')[1]}</ModalHeader>
