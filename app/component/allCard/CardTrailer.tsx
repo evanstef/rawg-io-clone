@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import play from '../../../asset/icons8-circled-play-100.png'
 import Image from 'next/image'
 import { Modal, ModalBody, ModalHeader } from 'reactstrap'
@@ -63,6 +63,7 @@ const CardTrailer = () => {
   const page: any = useRef()
   const view = useInView(page,{margin: "-300px"})
 
+
   const handleClick = (trailer: string) => {
     setCurrentTrailer(trailer)
     setShowModal(true)
@@ -73,22 +74,26 @@ const CardTrailer = () => {
   }
 
   const opst = {
-    width : '900',
-    height : '500',
+    width :"100%",
+    height : "400",
+    playerVars: {
+      controls: 1,
+      rel: 0,
+    }
   }
 
   return (
-    <div ref={page} className='flex flex-wrap justify-between mb-14'>
+    <div ref={page} className='flex flex-wrap justify-center lg:justify-between mb-14'>
       {trailers.map((item, index) => (
         <motion.div initial={{y:200, opacity:0}} animate={view ? {y:0, opacity:1, transition:{delay : 0.4 * index, duration : 0.5}} : {}} key={index}>
-          <div className='relative w-[400px] h-56 mb-2'>
-            <img className='h-56 w-[400px]' src={item.image} alt={item.name} />
+          <div className='relative w-[250px] h-[150px] lg:w-[400px] lg:h-56 mb-1 lg:mb-2'>
+            <img className='w-full h-full lg:h-56 lg:w-[400px]' src={item.image} alt={item.name} />
             <div className='flex w-full h-full items-center justify-center absolute top-0 left-0'>
-              <Image src={play} alt='Play' width={70} className='absolute top-20' />
+              <Image src={play} alt='Play' className='absolute w-[50px] lg:w-[70px] top-13 lg:top-20' />
             </div>
-            <div className='w-[400px] h-56 duration-500 ease absolute bottom-0 bg-slate-200 opacity-0 hover:opacity-30'></div>
+            <div className='w-full h-full lg:w-[400px] lg:h-56 duration-500 ease absolute bottom-0 bg-slate-200 opacity-0 hover:opacity-30'></div>
           </div>
-          <div onClick={() => handleClick(item.trailer)} className='underline duration-300 hover:text-blue-600 cursor-pointer mb-10'>{item.name}</div>
+          <div onClick={() => handleClick(item.trailer)} className='underline duration-300 hover:text-blue-600 cursor-pointer text-xs lg:text-[16px] mb-5 lg:mb-10'>{item.name}</div>
         </motion.div>
       ))}
        <Modal isOpen={showModal} className='fixed inset-0' toggle={handleClose}>
@@ -98,7 +103,10 @@ const CardTrailer = () => {
         <div className='inline-block align-middle rounded-lg overflow-hidden shadow-xl transform transition-all'>
       <ModalHeader toggle={handleClose}>{currentTrailer && currentTrailer.split('v=')[1]}</ModalHeader>
       <ModalBody>
-          <YouTube videoId={currentTrailer && currentTrailer.split('v=')[1]} opts={opst} /> 
+        <div className='w-[380px] lg:w-[800px]'>
+          <YouTube videoId={currentTrailer && currentTrailer.split('v=')[1]} opts={opst} />
+        </div>
+            
       </ModalBody>
         </div>
       </div>

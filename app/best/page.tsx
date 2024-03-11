@@ -13,8 +13,8 @@ const Page = () => {
 
 
   return (
-    <div className='w-[85%]'>
-      <h1 className='text-6xl font-bold pb-5 px-4'>Best Of The Year</h1>
+    <div className='w-[65%] lg:w-[85%]'>
+      <h1 className='lg:text-6xl font-bold lg:pb-5 px-4'>Best Of The Year</h1>
       {/* Bagian kartu */}
       <div className='flex flex-wrap'>
         {loading ? <LoadingIconBig/> : <CardBestGames />}

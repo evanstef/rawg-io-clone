@@ -34,22 +34,22 @@ const Sidebar = () => {
 
 
   return (
-    <div className='sticky top-0 w-[25%] text-2xl'>
-      <div className='mb-4 font-bold'>
+    <div className='sticky top-0 lg:w-[25%] w-[35%] lg:text-2xl'>
+      <div className='mb-1 lg:mb-4 font-bold'>
         <Link className={linkActive === "/" ? "text-black font-bold" : ""} href='/'>Home</Link>
       </div>
-      <div className='mb-4'>
+      <div className='mb-1 lg:mb-4'>
         <h1 className='font-bold'>Top</h1>
-          <ul className='text-[16px]'>
+          <ul className='text-[7px] lg:text-[16px]'>
             <li>
-              <Link className='flex gap-1 hover:text-black' href="/best">
-              <Image src={tropi} alt='' width={25} />
+              <Link className='flex gap-1 items-center hover:text-black' href="/best">
+              <Image className='w-3 h-3 lg:w-[25px] lg:h-[25px]' src={tropi} alt='' />
               <p className={linkActive === "/best" ? "font-bold text-black" : ""}>Best Of The Year</p>
               </Link>
             </li>
             <li>
-              <Link className='flex gap-1 hover:text-black' href="/alltime">
-                <Image className='w-6 h-6' src={crown} alt='' />
+              <Link className='flex items-center gap-1 hover:text-black' href="/alltime">
+                <Image className='w-3 h-3 lg:w-6 lg:h-6' src={crown} alt='' />
                 <p className={linkActive === "/alltime" ? "font-bold text-black" : ""}>All Time Top 50</p>
               </Link>
               </li>

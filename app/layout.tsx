@@ -27,11 +27,11 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body className={`bg-slate-600 text-slate-300 ${inter.className}`}>
+      <body className={`overflow-x-hidden w-full bg-slate-600 text-slate-300 ${inter.className}`}>
         <GameProvider>
           <Navbar />
           <Background />
-          <div className="mx-44 flex items-start mt-14 mb-32">
+          <div className="mx-5 lg:mx-44 flex gap-5 lg:gap-0 items-start mt-8 mb-32 lg:mt-14">
             <Sidebar />
             {children}   
           </div>

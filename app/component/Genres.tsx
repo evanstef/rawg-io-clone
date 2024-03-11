@@ -16,12 +16,12 @@ const newGenres = genres.slice(0,15).sort((a : any,b : any) => b.rating_count - 
   return (
  <div className='mb-4'> 
     <h1 className='font-bold'>Genre</h1> 
-      <ul className='text-[16px]'> 
+      <ul className='text-[7px] lg:text-[16px]'> 
       {newGenres.map((genre) => 
       ( 
       <li key={genre.id}> 
-        <Link onClick={() => handleGetIdGenres(genre.id)} className={`flex gap-2 items-center hover:text-black ${ linkActive === `/genres/${genre.slug}` ? 'text-black' : '' }`} href={`/genres/${genre.slug}`} > 
-          <img className='rounded-[4px] w-11 h-7 mb-2' src={genre.image_background} /> 
+        <Link onClick={() => handleGetIdGenres(genre.id)} className={`flex gap-1 lg:gap-2 lg:items-center hover:text-black ${ linkActive === `/genres/${genre.slug}` ? 'text-black' : '' }`} href={`/genres/${genre.slug}`} > 
+          <img className='rounded-[2px] lg:rounded-[4px] w-[15px] h-[9px] lg:w-11 lg:h-7 mb-2' src={genre.image_background} /> 
           <p className={linkActive === `/genre/${genre.slug}` ? 'text-black font-bold' : ''}>{genre.name}</p> 
         </Link> 
       </li> 
