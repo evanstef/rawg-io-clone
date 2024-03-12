@@ -44,9 +44,9 @@ const Background = () => {
         <Slider {...settings}>
           {image.map((img:any,i:any) => (
             <div key={i}>
-            <img className="w-full h-[250px] lg:h-[800px]" src={img} alt="" />
-              <div className='absolute w-full h-[250px] lg:h-[800px] top-0 bg-black opacity-50'></div>
-              <div className='absolute w-full h-[250px] lg:h-[800px] flex items-end top-0'>
+            <img className="w-full h-[225px] lg:h-[800px]" src={img} alt="" />
+              <div className='absolute w-full h-[225px] lg:h-[800px] top-0 bg-black opacity-50'></div>
+              <div className='absolute w-full h-[225px] lg:h-[800px] flex items-end top-0'>
                 <div className='mx-8 md:mx-44 text-[11px] lg:text-6xl font-bold mb-3 lg:mb-28'>
                   <motion.h1 className='lg:mb-3' initial={{y : 30, opacity : 0}} animate={{y : 0, opacity : 1}} transition={{delay : 0.4, duration : 0.8}}>Now Today,</motion.h1>
                   <Typewriter
@@ -62,11 +62,11 @@ const Background = () => {
                       loop : true
                     }}
                   />
-                  <motion.div initial={{x : -100, opacity : 0}} animate={{x:0, opacity:1}} transition={{delay : 0.6, duration : 0.8}} className='text-[6.5px] md:text-xl font-thin my-1 lg:my-4'>
+                <motion.div initial={{x : -100, opacity : 0}} animate={{x:0, opacity:1}} transition={{delay : 0.6, duration : 0.8}} className='text-[6.5px] md:text-xl font-thin my-1 lg:my-4'>
                   <h3>In here,you can search for any games you want, so I built this website,</h3>
                   <h3>but note that this website is only for searching for games and to know the description of the game,</h3> 
                   <h3>not for downloading or playing the game. So enjoy this website.</h3>
-               </motion.div>
+                </motion.div>
               <motion.div initial={{x : -70, opacity : 0}} animate={{x:0, opacity:1}} transition={{delay : 0.8, duration : 0.8, ease : easeInOut}}  className='text-[10px] lg:text-3xl cursor-pointer text-slate-800 hover:text-slate-200 bg-teal-500 duration-300 hover:bg-teal-700 px-2 lg:px-4 lg:py-2 rounded-2xl w-[55px] lg:w-[150px]'>JOIN US</motion.div>
               </div>
             </div>
